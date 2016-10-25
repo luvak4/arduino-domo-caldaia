@@ -4,10 +4,10 @@
 
 #include <VirtualWire.h>
 
-#define photoA    A0
-#define photoB    A1
-#define photoC    A2
-#define photoD    A3
+#define pin_photoA    A0
+#define pin_photoB    A1
+#define pin_photoC    A2
+#define pin_photoD    A3
 #define pin_rx    11
 #define pin_tx    12
 
@@ -56,7 +56,6 @@ byte CIFR[]={223,205,228,240,43,146,241,//
 	     138,239,200,179,222,231,212};
 #define mask 0x00FF
 
-
 void setup() {
   vw_set_tx_pin(pin_tx);
   vw_set_rx_pin(pin_rx);
@@ -82,28 +81,28 @@ void loop(){
 	MinPhotoD=0;
       }
     }
-    if (analogRead(photoA)>SOGLIA){
+    if (analogRead(pin_photoA)>SOGLIA){
       SecPhotoA+=1;
       if (SecPhotoA>59){
 	SecPhotoA=0;
 	MinPhotoA+=1;
       }
     }
-    if (analogRead(photoB)>SOGLIA){
+    if (analogRead(pin_photoB)>SOGLIA){
       SecPhotoB+=1;
       if (SecPhotoB>59){
 	SecPhotoB=0;
 	MinPhotoB+=1;
       }
     }
-    if (analogRead(photoC)>SOGLIA){
+    if (analogRead(pin_photoC)>SOGLIA){
       SecPhotoC+=1;
       if (SecPhotoC>59){
 	SecPhotoC=0;
 	MinPhotoC+=1;
       }
     }
-    if (analogRead(photoD)>SOGLIA){
+    if (analogRead(pin_photoD)>SOGLIA){
       SecPhotoD+=1;
       if (SecPhotoD>59){
 	SecPhotoD=0;
